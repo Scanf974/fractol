@@ -6,7 +6,7 @@
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/23 15:48:36 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/23 20:57:36 by bsautron         ###   ########.fr       */
+/*   Updated: 2015/03/23 21:14:02 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,24 @@ static void	ft_each(int y, int x, t_env *env)
 {
 	int			i;
 	t_plex		c;
-	t_plex		new;
-	t_plex		old;
+	t_plex		z;
 	double		tmp;
 
 	c.re = 1.5 * (x - WIDTH / 2) / ( 0.5 * env->zoom * WIDTH) - 0.5;
 	c.im = (y - HEIGHT / 2) / (0.5 * env->zoom * HEIGHT) + 0;
-	new.re = 0;
-	new.im = 0;
-	old.re = 0;
-	old.im = 0;
+	z.re = 0;
+	z.im = 0;
 	i = 0;
 	while (i < env->mandel.iteration_max)
 	{
-		old.re = new.re;
-		old.im = new.im;
-		new.re = old.re * old.re - old.im * old.im + c.re;
-		new.im = 2 * old.re * old.im + c.im;
-		if (new.re * new.re + new.im * new.im > 4)
+		tmp = z.re;
+		z.re = z.re * z.re - z.im * z.im + c.re;
+		z.im = 2 * tmp * z.im + c.im;
+		if (z.re * z.re + z.im * z.im > 4)
 			break ;
 		i++;
 	}
-	if (i == env->mandel.iteration_max)
+	if (i != env->mandel.iteration_max)
 	{
 		ft_put_pixel_to_image(env, y, x, 0xffffff);
 	}
