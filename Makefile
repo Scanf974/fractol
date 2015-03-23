@@ -6,7 +6,7 @@
 #    By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/18 05:41:35 by bsautron          #+#    #+#              #
-#    Updated: 2015/03/23 16:05:31 by bsautron         ###   ########.fr        #
+#    Updated: 2015/03/23 23:46:56 by bsautron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = fractol
 SRC = main.c \
 	  expose_hook.c \
 	  key_hook.c \
+	  pointer_motion_hook.c \
 	  \
 	  ft_put_pixel_to_image.c \
 	  ft_mandelbrot.c \

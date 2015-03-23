@@ -6,7 +6,7 @@
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/23 15:48:36 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/23 21:14:02 by bsautron         ###   ########.fr       */
+/*   Updated: 2015/03/23 21:21:57 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,7 @@ static void	ft_each(int y, int x, t_env *env)
 		i++;
 	}
 	if (i != env->mandel.iteration_max)
-	{
 		ft_put_pixel_to_image(env, y, x, 0xffffff);
-	}
 }
 
 void	ft_mandelbrot(t_env *env)

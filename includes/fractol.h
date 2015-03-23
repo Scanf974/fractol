@@ -6,7 +6,7 @@
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/11 18:21:09 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/23 18:34:19 by bsautron         ###   ########.fr       */
+/*   Updated: 2015/03/23 23:46:40 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ struct				s_env
 
 int			key_hook(int keycode, t_env *env);
 int			expose_hook(t_env *env);
+int			pointer_motion_hook(int x, int y, t_env *env);
 void		ft_put_pixel_to_image(t_env *env, int y, int x, int color);
 void		ft_draw(t_env *env, char *name);
 void		ft_mandelbrot(t_env *env);

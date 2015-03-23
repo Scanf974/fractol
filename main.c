@@ -6,7 +6,7 @@
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/11 18:23:06 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/23 18:20:29 by bsautron         ###   ########.fr       */
+/*   Updated: 2015/03/23 23:45:27 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		main(int argc, char **argv)
 		env.img.char_img = mlx_get_data_addr(env.img.ptr, &env.img.bpp, &env.img.size_line, &env.img.endian);
 		ft_draw(&env, argv[1]);
 		mlx_put_image_to_window(env.mlx, env.win, env.img.ptr, 0, 0);
+		mlx_hook(env.win, MotionNotify, PointerMotionMask, pointer_motion_hook, &env);
 		mlx_key_hook(env.win, key_hook, &env);
 		mlx_expose_hook(env.win, expose_hook, &env);
 		mlx_loop(env.mlx);
