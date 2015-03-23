@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_pixel_to_image.c                            :+:      :+:    :+:   */
+/*   ft_draw.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/23 13:56:47 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/23 20:09:49 by bsautron         ###   ########.fr       */
+/*   Created: 2015/03/23 15:49:08 by bsautron          #+#    #+#             */
+/*   Updated: 2015/03/23 16:09:05 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fractol.h>
 
-void	ft_put_pixel_to_image(t_env *env, int y, int x, int color)
+void	ft_draw(t_env *env, char *name)
 {
-	size_t          index;
-
-	index = x * 4 + y * env->img.size_line;
-	if (x < WIDTH && x >= 0 && y < HEIGHT && y >= 0)
+	if (ft_strequ(name, "Mandelbrot"))
+		ft_mandelbrot(env);
+	else
 	{
-		env->img.char_img[index] = (char)color;
-		env->img.char_img[index + 1] = (char)(color >> 8);
-		env->img.char_img[index + 2] = (char)(color >> 16);
+		ft_putendl("Elle n'existe pas ta fractal");
+		exit(0);
 	}
 }

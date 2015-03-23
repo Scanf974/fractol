@@ -6,7 +6,7 @@
 #    By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/18 05:41:35 by bsautron          #+#    #+#              #
-#    Updated: 2015/03/23 14:00:19 by bsautron         ###   ########.fr        #
+#    Updated: 2015/03/23 16:05:31 by bsautron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ SRC = main.c \
 	  expose_hook.c \
 	  key_hook.c \
 	  \
-	  ft_put_pixel_to_image.c
+	  ft_put_pixel_to_image.c \
+	  ft_mandelbrot.c \
+	  ft_draw.c
 OBJ = $(SRC:%.c=obj/%.o)
 CFLAGS = -Wextra -Wall -Werror
 LIB = -L./libft -lft
@@ -32,8 +34,6 @@ $(NAME): $(OBJ)
 
 libs:
 	make -C libft/
-	make -C minilibx_macos/
-
 
 obj/%.o: %.c includes/fractol.h
 	@echo "\033[33m 	$<"
