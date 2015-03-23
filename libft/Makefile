@@ -6,7 +6,7 @@
 #    By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/18 05:41:43 by bsautron          #+#    #+#              #
-#    Updated: 2015/02/18 12:35:23 by bsautron         ###   ########.fr        #
+#    Updated: 2015/03/23 11:45:56 by bsautron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,7 @@ SRC = ft_memset.c \
 	  ft_lstmap.c \
 	  \
 	  get_next_line.c
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=../obj/%.o)
 NAME = libft.a
 
 all: $(NAME)
@@ -102,9 +102,9 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 	@echo "\033[37m"
 
-%.o: %.c
-	@echo "\033[36m   $^"
-	@$(CC) $(FLAGS) -I ../includes/ -c $^
+../obj/%.o: %.c ../includes/libft.h ../includes/get_next_line.h
+	@echo "\033[36m   $<"
+	@$(CC) -o $@ $(FLAGS) -I ../includes/ -c $<
 
 clean:
 	@rm -f $(OBJ)
