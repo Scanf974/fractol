@@ -6,7 +6,7 @@
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/23 15:48:36 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/23 21:21:57 by bsautron         ###   ########.fr       */
+/*   Updated: 2015/03/30 00:07:44 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	ft_init_mandel(t_env *env)
 {
-	env->zoom = 1;
 	env->mandel.iteration_max = 128;
 }
 

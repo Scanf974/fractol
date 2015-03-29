@@ -6,7 +6,7 @@
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/11 18:21:09 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/23 23:46:40 by bsautron         ###   ########.fr       */
+/*   Updated: 2015/03/30 00:00:17 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 # define FRACTOL_H
 
 # include "libft.h"
+# include <myx.h>
 # include <stdio.h>
 # include <mlx.h>
 
 # define WIDTH		500
 # define HEIGHT		400
+# define ESP		53
+# define PLUS		24
 
 typedef struct s_env	t_env;
 typedef struct s_img	t_img;

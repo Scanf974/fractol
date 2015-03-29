@@ -6,7 +6,7 @@
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/11 18:23:06 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/27 00:17:11 by bsautron         ###   ########.fr       */
+/*   Updated: 2015/03/30 00:09:33 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		main(int argc, char **argv)
 	ft_bzero(&env, sizeof(t_env));
 	if (argc == 2)
 	{
+		env.zoom = 1.2;
 		if (!(env.mlx = mlx_init()))
 		{
 			ft_putendl_fd("env -i lol", 2);
@@ -29,7 +30,7 @@ int		main(int argc, char **argv)
 		env.img.char_img = mlx_get_data_addr(env.img.ptr, &env.img.bpp, &env.img.size_line, &env.img.endian);
 		ft_draw(&env, argv[1]);
 		mlx_put_image_to_window(env.mlx, env.win, env.img.ptr, 0, 0);
-//		mlx_hook(env.win, MotionNotify, PointerMotionMask, pointer_motion_hook, &env);
+		mlx_hook(env.win, MotionNotify, PointerMotionMask, pointer_motion_hook, &env);
 		mlx_key_hook(env.win, key_hook, &env);
 		mlx_expose_hook(env.win, expose_hook, &env);
 		mlx_loop(env.mlx);
